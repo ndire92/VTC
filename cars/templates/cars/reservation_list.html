@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Liste des Réservations{% endblock %}
+
+{% block content %}
+<div class="reservation-list-container">
+    <h1>Liste des Réservations</h1>
+
+    <!-- Liste des réservations -->
+    {% if reservations %}
+    <div class="reservation-list">
+        {% for reservation in reservations %}
+        <div class="reservation-card">
+            <div class="car-info">
+                <h3>{{ reservation.voiture.marque.nom }} {{ reservation.voiture.modele }}</h3>
+                <img src="{{ reservation.voiture.image.url }}" alt="{{ reservation.voiture.modele }}" class="reservation-car-image">
+            </div>
+            <div class="reservation-details">
+                <p><strong>Utilisateur :</strong> {{ reservation.utilisateur_nom }}</p>
+                <p><strong>Date de début :</strong> {{ reservation.date_debut }}</p>
+                <p><strong>Date de fin :</strong> {{ reservation.date_fin }}</p>
+                <p><strong>Statut :</strong> {{ reservation.statut }}</p>
+                <p><strong>Montant total :</strong> {{ reservation.montant_total }} FCFA</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>Aucune réservation disponible pour le moment.</p>
+    {% endif %}
+</div>
+{% endblock %}

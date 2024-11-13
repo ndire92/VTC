@@ -1,0 +1,353 @@
+/* Style de base pour le menu */
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style pour le titre principal */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Formulaire de filtrage */
+.form-filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #34495e;
+}
+
+select, button {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Liste des voitures */
+.voitures-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.voiture-item {
+    list-style-type: none;
+}
+
+.voiture-card {
+    border: 1px solid #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.voiture-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.voiture-info {
+    padding: 15px;
+}
+
+.voiture-info h3 {
+    font-size: 1.5em;
+    color: #2c3e50;
+}
+
+.voiture-info p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+.voiture-info a {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.voiture-info a:hover {
+    background-color: #2980b9;
+}
+
+
+
+/* Bannière */
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.banner-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.banner-text p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.banner-text .btn {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.banner-text .btn:hover {
+    background-color: #e65c00;
+}
+
+.banner-image {
+    flex: 1;
+}
+
+.banner-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+/* Liste des véhicules */
+.voitures {
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.vehicle-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.vehicle-card {
+    flex: 1 1 calc(33.333% - 20px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.vehicle-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.vehicle-card h4 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.vehicle-card .btn {
+    margin-top: 10px;
+}
+
+/* Témoignages */
+.temoignages {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.temoignage-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.temoignage-card {
+    flex: 1 1 calc(50% - 20px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.temoignage-card h4 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Formulaire de filtrage */
+/* Formulaire de filtrage */
+.form-filter {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    gap: 15px; /* Espace entre les champs */
+    padding: 10px;
+    width: 100%;
+    max-width: 800px; /* Limite la largeur du formulaire */
+    margin: 0 auto; /* Centre le formulaire */
+    box-sizing: border-box; /* Inclut les padding dans la largeur totale */
+    background-image: url('{% static "path_to_your_transparent_image.png" %}'); /* Image transparente en arrière-plan */
+    background-size: cover; /* Recouvre toute la zone */
+    background-position: center; /* Centrer l'image */
+    border-radius: 10px; /* Ajoute des coins arrondis pour un effet plus doux */
+}
+
+/* Groupes de formulaire */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1; /* Chaque champ prendra 1 fraction de l'espace disponible */
+    min-width: 180px; /* Définit une largeur minimale pour chaque champ */
+}
+
+/* Labels des champs de formulaire */
+label {
+    font-weight: bold;
+    font-size: 1em;
+    color: #060303; /* Texte en blanc pour contraster avec l'arrière-plan */
+    margin-bottom: 5px;
+}
+
+/* Champs de formulaire */
+select, input {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 40px;
+    width: 100%; /* S'assure que les champs prennent toute la largeur du conteneur */
+}
+
+/* Container du bouton pour s'assurer qu'il soit centré */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement le bouton */
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Bouton de soumission */
+button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    height: 40px;
+    padding: 0 30px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .form-filter {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .form-group {
+        flex-basis: 100%; /* Sur les petits écrans, les champs prennent toute la largeur */
+    }
+
+    button {
+        padding: 0 20px; /* Réduit la largeur du bouton sur petits écrans */
+    }
+}
+
+/* Formulaire de filtrage */
+.form-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-image: url("{% static 'images/slider1.png' %}"); /* Image d'arrière-plan */
+    background-size: cover; /* Ajuste pour couvrir tout le conteneur */
+    background-position: center; /* Centre l'image */
+    border-radius: 10px; /* Coins arrondis pour un effet doux */
+    color: #ffffff; /* Ajuste la couleur du texte si besoin */
+}
+

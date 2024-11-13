@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ voiture.marque.nom }} {{ voiture.modele }}{% endblock %}
+
+{% block content %}
+<div class="car-details-container">
+    <h1 class="car-title">{{ voiture.marque.nom }} {{ voiture.modele }}</h1>
+
+    <!-- Image de la voiture -->
+    <div class="car-image">
+        <img src="{{ voiture.image.url }}" alt="{{ voiture.modele }}" class="img-fluid">
+    </div>
+
+    <!-- Description et détails de la voiture -->
+    <p class="car-description">{{ voiture.description }}</p>
+    <p class="car-price"><strong>Prix par jour:</strong> {{ voiture.prix_par_jour }} FCFA</p>
+
+    <!-- Formulaire de réservation -->
+    <h3 class="reservation-title">Réservez cette voiture</h3>
+    <form method="post" class="reservation-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Réserver et Envoyer par WhatsApp</button>
+    </form>
+</div>
+{% endblock %}

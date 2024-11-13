@@ -1,0 +1,61 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau de Bord - Gestion</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard_custom.css' %}">
+</head>
+<body>
+    <h1>Tableau de Bord</h1>
+
+    <!-- Boutons pour afficher les formulaires -->
+    <button onclick="showForm('marqueForm')">Ajouter une Marque</button>
+    <button onclick="showForm('voitureForm')">Ajouter une Voiture</button>
+    <button onclick="showForm('reservationForm')">Ajouter une Réservation</button>
+    <button onclick="showForm('temoinForm')">Ajouter un Témoignage</button>
+
+    <!-- Formulaire d'ajout de marque -->
+    <div id="marqueForm" class="form-container" style="display: none;">
+        <h2>Ajouter une Marque</h2>
+        <form method="post" action="{% url 'marque_add' %}">
+            {% csrf_token %}
+            {{ form_marque.as_p }}
+            <button type="submit">Enregistrer Marque</button>
+        </form>
+    </div>
+
+    <!-- Formulaire d'ajout de voiture -->
+    <div id="voitureForm" class="form-container" style="display: none;">
+        <h2>Ajouter une Voiture</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form_voiture.as_p }}
+            <button type="submit">Enregistrer Voiture</button>
+        </form>
+    </div>
+
+    <!-- Formulaire d'ajout de réservation -->
+    <div id="reservationForm" class="form-container" style="display: none;">
+        <h2>Ajouter une Réservation</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form_reservation.as_p }}
+            <button type="submit">Enregistrer Réservation</button>
+        </form>
+    </div>
+
+    <!-- Formulaire d'ajout de témoignage -->
+    <div id="temoinForm" class="form-container" style="display: none;">
+        <h2>Ajouter un Témoignage</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form_temoin.as_p }}
+            <button type="submit">Enregistrer Témoignage</button>
+        </form>
+    </div>
+
+    <script src="{% static 'js/dashboard_custom.js' %}"></script>
+</body>
+</html>

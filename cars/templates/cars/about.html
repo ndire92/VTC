@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}À propos{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <h1>À propos de nous</h1>
+    
+    <section class="company-info">
+        <h2>Qui sommes-nous ?</h2>
+        <p>Nous sommes une entreprise spécialisée dans la location de voitures au Sénégal, avec une expérience de plus de 10 ans dans le secteur. Nous offrons une large gamme de véhicules adaptés à tous les besoins, que ce soit pour les affaires, le tourisme ou des événements spéciaux. Notre objectif est de rendre la location de voiture simple, abordable et accessible à tous.</p>
+        
+        <h3>Notre mission</h3>
+        <p>Notre mission est de fournir un service de location de voitures fiable et pratique, offrant une expérience sans tracas à nos clients. Nous mettons l'accent sur la sécurité, le confort et la satisfaction de nos clients, avec un service client exceptionnel disponible 24/7.</p>
+        
+        <h3>Nos valeurs</h3>
+        <ul>
+            <li><strong>Fiabilité :</strong> Des véhicules bien entretenus et en parfait état de marche.</li>
+            <li><strong>Service client :</strong> Une équipe dédiée et à l'écoute de vos besoins.</li>
+            <li><strong>Accessibilité :</strong> Des prix compétitifs et des options flexibles de location.</li>
+        </ul>
+    </section>
+
+    <section class="team-section">
+        <h2>Notre équipe</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="{% static 'images/team_member1.jpg' %}" alt="Membre de l'équipe" class="team-image">
+                <h4>Jean Dupont</h4>
+                <p>Directeur Général</p>
+                <p>Jean a plus de 15 ans d'expérience dans le secteur automobile et dirige notre entreprise avec passion et engagement.</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/team_member2.jpg' %}" alt="Membre de l'équipe" class="team-image">
+                <h4>Sophie Demba</h4>
+                <p>Responsable Marketing</p>
+                <p>Sophie est en charge de la stratégie marketing et veille à ce que nous atteignions nos clients à travers tous les canaux numériques.</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/team_member3.jpg' %}" alt="Membre de l'équipe" class="team-image">
+                <h4>Alioune Ndiaye</h4>
+                <p>Responsable Service Client</p>
+                <p>Alioune assure la satisfaction de nos clients et s'assure que chaque réservation se passe dans les meilleures conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="customer-testimonials">
+        <h2>Témoignages clients</h2>
+        <div class="testimonial-card">
+            <p>"Le service de location a été incroyable ! La voiture était impeccable et le personnel très professionnel. Je recommande vivement !" - <strong>Aminata Fall</strong></p>
+        </div>
+        <div class="testimonial-card">
+            <p>"Je loue toujours mes voitures chez eux, je n'ai jamais eu de mauvaises surprises. Très fiable !" - <strong>Mamadou Sarr</strong></p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <h2>Nous contacter</h2>
+        <p>Si vous avez des questions, des suggestions ou si vous souhaitez en savoir plus sur nos services, n'hésitez pas à nous contacter :</p>
+        <p><strong>Email :</strong> <a href="mailto:contact@locationvoiture.sn">contact@locationvoiture.sn</a></p>
+        <p><strong>Téléphone :</strong> +221 77 123 45 67</p>
+    </section>
+</div>
+{% endblock %}

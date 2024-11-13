@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<div class="home-container">
+
+    <!-- Banner section with image and text -->
+    <div class="banner">
+        <div class="image-container">
+            <img src="{% static 'images/slider2.jpg' %}" alt="Peugeot 308" class="main-image">
+            <div class="image-overlay">
+                <h2>Peugeot 308</h2>
+                <p>Rent this stylish car with modern features for your next trip to Senegal!</p>
+                <a href="/reservation" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Car filter form -->
+    <div class="filter-section">
+        <form method="get" class="overlay-form form-filter">
+            <h3>Filter Cars</h3>
+            <div class="form-group">
+                <label for="id_marque">Marque</label>
+                {{ form.marque }}
+            </div>
+            <div class="form-group">
+                <label for="id_annee">Année</label>
+                {{ form.annee }}
+            </div>
+            <div class="form-group">
+                <label for="id_prix_par_jour">Prix par jour</label>
+                {{ form.prix_par_jour }}
+            </div>
+            <div class="form-group">
+                <label for="id_carburant">Carburant</label>
+                {{ form.carburant }}
+            </div>
+            <button type="submit" class="btn btn-primary">Apply Filters</button>
+        </form>
+    </div>
+
+    <!-- Car listings -->
+    <div class="car-listing">
+        <h2>Our Vehicles</h2>
+        <div class="vehicle-grid">
+            {% for voiture in voitures %}
+            <div class="vehicle-card">
+                <img src="{{ voiture.image.url }}" alt="{{ voiture.modele }}" class="vehicle-image">
+                <div class="vehicle-details">
+                    <h3>{{ voiture.marque.nom }} {{ voiture.modele }}</h3>
+                    <p><strong>Prix par jour:</strong> {{ voiture.prix_par_jour }} FCFA</p>
+                    <p><strong>Année:</strong> {{ voiture.annee }}</p>
+                    <p><strong>Carburant:</strong> {{ voiture.carburant }}</p>
+                    <a href="{% url 'voiture_details' voiture.id %}" class="btn btn-info">Faire une réservation</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            {% if voitures.has_previous %}
+                <a href="?page=1">First</a>
+                <a href="?page={{ voitures.previous_page_number }}">Previous</a>
+            {% endif %}
+            <span>Page {{ voitures.number }} of {{ voitures.paginator.num_pages }}</span>
+            {% if voitures.has_next %}
+                <a href="?page={{ voitures.next_page_number }}">Next</a>
+                <a href="?page={{ voitures.paginator.num_pages }}">Last</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Customer testimonials -->
+    <div class="testimonials-section">
+        <h2>Témoignages de clients</h2>
+        <div class="testimonials">
+            {% for temoin in temoins %}
+            <div class="testimonial-card">
+                <p>{{ temoin.commentaire }}</p>
+                <h4>- {{ temoin.utilisateur }}</h4>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

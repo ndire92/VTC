@@ -1,0 +1,22 @@
+<!-- liste_temoin.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Témoignages</title>
+</head>
+<body>
+    <h1>Liste des Témoignages</h1>
+    <ul>
+        {% for temoin in temoins %}
+            <li>
+                <strong>{{ temoin.utilisateur.username }}</strong> - {{ temoin.voiture.marque.nom }} {{ temoin.voiture.modele }} <br>
+                Note : {{ temoin.note }} <br>
+                Commentaire : {{ temoin.commentaire }}
+            </li>
+        {% empty %}
+            <li>Aucun témoignage disponible pour le moment.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
